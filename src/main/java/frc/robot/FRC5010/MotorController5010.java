@@ -17,4 +17,5 @@ public interface MotorController5010 extends MotorController{
     RelativeEncoder getEncoder();
     RelativeEncoder getEncoder(Type sensorType, int countsPerRev);
     MotorController getMotor();
+    void factoryDefault();
 }

@@ -89,4 +89,9 @@ public class DriveTrainMotor implements MotorController5010{
     public MotorController getMotor() {
         return _motor.getMotor();
     }
+    @Override
+    public void factoryDefault() {
+        // Not sure if it needs to return anything
+        _motor.factoryDefault();
+    }
 }

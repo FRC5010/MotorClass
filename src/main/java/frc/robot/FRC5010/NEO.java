@@ -51,4 +51,9 @@ public class NEO extends CANSparkMax implements MotorController5010{
         // TODO Auto-generated method stub
         return this;
     }
+    @Override
+    public void factoryDefault() {
+        // TODO Auto-generated method stub
+        this.restoreFactoryDefaults();
+    }
 }
