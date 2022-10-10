@@ -4,6 +4,9 @@
 
 package frc.robot.FRC5010;
 
+import com.revrobotics.RelativeEncoder;
+import com.revrobotics.SparkMaxRelativeEncoder.Type;
+
 import edu.wpi.first.wpilibj.motorcontrol.MotorController;
 
 /** Add your docs here. */
@@ -11,5 +14,7 @@ public interface MotorController5010 extends MotorController{
     MotorController5010 setSlewRate(double rate);
     MotorController5010 setFollow(MotorController5010 motor);
     MotorController5010 invert(boolean inverted);
+    RelativeEncoder getEncoder();
+    RelativeEncoder getEncoder(Type sensorType, int countsPerRev);
     MotorController getMotor();
 }

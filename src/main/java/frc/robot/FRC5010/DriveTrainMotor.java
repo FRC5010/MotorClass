@@ -4,6 +4,9 @@
 
 package frc.robot.FRC5010;
 
+import com.revrobotics.RelativeEncoder;
+import com.revrobotics.SparkMaxRelativeEncoder.Type;
+
 import edu.wpi.first.wpilibj.motorcontrol.MotorController;
 
 /** Add your docs here. */
@@ -73,6 +76,14 @@ public class DriveTrainMotor implements MotorController5010{
         // TODO Auto-generated method stub
         _motor.invert(inverted);
         return this;
+    }
+    @Override
+    public RelativeEncoder getEncoder(){
+        return _motor.getEncoder();
+    }
+    @Override
+    public RelativeEncoder getEncoder(Type sensorType, int countsPerRev){
+        return _motor.getEncoder(sensorType, countsPerRev);
     }
     @Override
     public MotorController getMotor() {

@@ -5,6 +5,7 @@
 package frc.robot;
 
 import com.revrobotics.CANSparkMax;
+import com.revrobotics.RelativeEncoder;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj.GenericHID;
@@ -40,14 +41,17 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the button bindings
     driver = new Controller(0);
-    driver.setLeftYAxis(driver.createLeftYAxis().deadzone(.075).cubed().negate().limit(.4));
-    driver.setRightXAxis(driver.createRightXAxis().deadzone(.075).limit(.4));
+    driver.setLeftYAxis(driver.createLeftYAxis().deadzone(.075).cubed().negate().limit(1));
+    driver.setRightXAxis(driver.createRightXAxis().deadzone(.075).limit(1));
     motor1 = MotorFactory.DriveTrainMotor(MotorFactory.NEO(1));
     motor2 = MotorFactory.DriveTrainMotor(MotorFactory.NEO(2).setFollow(motor1));
     motor3 = MotorFactory.DriveTrainMotor(MotorFactory.NEO(3).setFollow(motor1));
     motor4 = MotorFactory.DriveTrainMotor(MotorFactory.NEO(4).invert(true));
     motor5 = MotorFactory.DriveTrainMotor(MotorFactory.NEO(5).setFollow(motor4));
     motor6 = MotorFactory.DriveTrainMotor(MotorFactory.NEO(6).setFollow(motor4));
+    
+    RelativeEncoder test = motor6.getEncoder();
+    System.out.println(test.getPosition());
     
 
     drive = new DifferentialDrive(motor1, motor4);

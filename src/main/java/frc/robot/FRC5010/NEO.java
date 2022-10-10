@@ -5,6 +5,8 @@
 package frc.robot.FRC5010;
 
 import com.revrobotics.CANSparkMax;
+import com.revrobotics.RelativeEncoder;
+import com.revrobotics.SparkMaxRelativeEncoder.Type;
 
 import edu.wpi.first.wpilibj.motorcontrol.MotorController;
 
@@ -35,6 +37,14 @@ public class NEO extends CANSparkMax implements MotorController5010{
         // TODO Auto-generated method stub
         this.setInverted(inverted);
         return this;
+    }
+    @Override
+    public RelativeEncoder getEncoder(){
+        return this.getEncoder();
+    }
+    @Override
+    public RelativeEncoder getEncoder(Type sensorType, int countsPerRev){
+        return this.getEncoder(sensorType, countsPerRev);
     }
     @Override
     public MotorController getMotor() {
